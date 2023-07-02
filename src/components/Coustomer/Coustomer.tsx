@@ -1,11 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import axios from "axios";
-import { useFormik } from "formik";
-import * as Yup from "yup";
 import { RxCrossCircled } from "react-icons/rx";
 import { Input } from "@mantine/core";
+import { useFormik } from "formik";
+import NavigationHeader from "../Layout/Header";
+import axios from "axios";
+import * as Yup from "yup";
 
-export default function Register() {
+export default function Coustomer() {
   const userLoginAPI = process.env.REACT_APP_API_DEVICES_COUNT;
 
   const userLogin = async (formData: any) => {
@@ -56,7 +57,7 @@ export default function Register() {
 
   return (
     <>
-      {/* <NavigationHeader /> */}
+      <NavigationHeader />
       <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
