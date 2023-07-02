@@ -30,10 +30,7 @@ export default function NavigationHeader() {
 
   return (
     <div className="fixed top-0 z-[100] w-full">
-      <Header
-        height={HEADER_HEIGHT}
-        className={`${classes.root} !border-b-0`}
-      >
+      <Header height={HEADER_HEIGHT} className={`${classes.root} !border-b-0`}>
         <div className="flex justify-between items-center h-full mx-5 lg:mx-10">
           <div className="">
             <Link to="/">
@@ -44,20 +41,8 @@ export default function NavigationHeader() {
               />
             </Link>
           </div>
-          <div className="flex justify-end items-center text-sm">
-            <VariantToggle />
-            <div className="flex justify-start items-center mb-6 mr-4">
-              <ColorSchemeToggle />
-            </div>
-            <div>
-              <Link to="/">
-                <Image
-                  alt="logo"
-                  height={25}
-                  src="/variantA/assets/images/nsw-government.png"
-                />
-              </Link>
-            </div>
+          <div className="flex justify-start items-center mb-6 mr-4">
+            <ColorSchemeToggle />
           </div>
         </div>
       </Header>
