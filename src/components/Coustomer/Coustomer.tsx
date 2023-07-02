@@ -6,15 +6,14 @@ import NavigationHeader from "../Layout/Header";
 import axios from "axios";
 import * as Yup from "yup";
 import SecuredRoute from "../Layout/SecuredRoute";
-import { DateInput } from "@mantine/dates";
 import { useState } from "react";
 
 export default function Customer() {
   const userLoginAPI = process.env.REACT_APP_API_DEVICES_COUNT;
 
-  const [projectEndDate, setProjectEndDate] = useState<Date | null>();
+  const [dateOfbirth, setDateOfbirth] = useState<Date | null>();
 
-  const userLogin = async (formData: any) => {
+  const addCustomer = async (formData: any) => {
     try {
       const response = await axios.post(`${userLoginAPI}`, formData);
       console.log(response, response);
@@ -182,7 +181,11 @@ export default function Customer() {
                     type="text"
                     className=" border border-black text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 "
                     placeholder="Select date"
-                    name=""
+                    name="dateOfbirth"
+                    // value={dateOfbirth}
+                    onChange={(e: any) => {
+                      setDateOfbirth(e.taget.value);
+                    }}
                   />
                 </div>
               </div>
